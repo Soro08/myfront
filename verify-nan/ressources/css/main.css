@@ -1,0 +1,484 @@
+/*!
+ * © Kay Donald
+ * Devs front 
+ * 
+
+                      .
+                     d8b
+                   d88888b
+                 d888Y Y888b
+               d888Y  .  Y888b
+             d888Y   d8b   Y888b
+           d888Y   d88888b   Y888b
+            ""   d888Y Y888b   ""
+               d888Y  .  Y888b
+                ""   d8b   ""
+                   d88888b
+   8888b   88888     Y8b     8888b   88888
+    8888b   888       '       8888b   888
+    88888b  888               88888b  888
+    888Y88b 888    88888b.    888Y88b 888
+    888 Y88b888    "   "88b   888 Y88b888
+    888  Y88888   .d8888888   888  Y88888
+    888   Y8888   888   888   888   Y8888
+   88888   Y888   "Y88888"88 88888   Y888 
+ *---------------------------------------------
+ *  KAY DONALD
+ * MAIN.CSS
+ *
+    */
+
+  /* VARIABLES ********************************************* */
+
+  :root{
+    --primary-color:#8489f0;
+    --secondary-color: #3f3e56;
+    --secondary-color-fade:#787e83;
+    --ternary-color: #f5f6ff;
+    --ternary-color-gradient: #eaecfc;
+    --teal-color-gradient: #2ea2a2;
+    --red-color: #be4343;
+    --yellow-color: #aa9b11;
+
+    --default-color: #ccc;
+    --default-transition: all .2s;
+
+
+    --white-color: #fff;
+    --black-color:#000;
+  }
+
+  @import url('https://fonts.googleapis.com/css?family=Lato|Lora&display=swap');
+  
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
+
+  .mt-default{margin-top: 5rem;}
+  .mb-default{margin-bottom: 5rem;}
+  .mt-little{margin-top: 4rem;}
+  .mw-p{max-width: 40rem;}
+  .mw-p2{max-width: 100rem; margin: 0 auto;}
+
+  html{
+    font-size: 62.5%; /* 10px */
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    scroll-behavior: smooth;
+  }
+
+  body{
+    padding: 2rem;
+    background-color: var(--secondary-color);
+    color: var(--secondary-color);
+    background-image: url(../images/svg/pat-back.svg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 2%;
+    overflow-x: hidden;
+    font-family: 'Lato', sans-serif;
+  }
+
+  ul li{
+    list-style: none;
+    display: inline-block;
+  }
+
+  a,a:hover{text-decoration: none;}
+
+  .footer{
+    background-color: var(--ternary-color-gradient);
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+  }
+
+  .footer__block ul a li{
+    display: block;
+    font-size: 1.5rem;
+    padding: .5rem 0;
+    color: var(--secondary-color);
+    transition: var(--default-transition);
+  }
+
+  .footer__block ul a:not(:last-child) li{
+    border-bottom: 1px dashed var(--secondary-color-fade);
+  }
+  
+  .footer__block ul a:hover li{
+    color: var(--teal-color-gradient);
+    padding-left: .5rem;
+  }
+
+  .footer__social-link{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .footer__social-link div{
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    transition: var(--default-transition);
+    background-color: var(--secondary-color);
+    margin: 0 .5rem;
+  }
+
+  .footer__social-link div img{
+    max-height: 2rem;
+  }
+
+  .copyright{
+    color: var(--ternary-color);
+    font-size: 1.4rem;
+    padding-top: 2rem;
+  }
+
+  .main-box{
+    background-color: var(--ternary-color);
+    min-height: 30rem;
+    max-width: 120rem;
+    margin: 0 auto;
+    border: 4px solid var(--ternary-color-gradient);
+  }
+
+  .center-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .heading-block hr{
+    width: 7rem;
+    border-radius: 2.5rem;
+    border: 2px solid var(--primary-color);
+  }
+
+  .heading-one{
+    font-size: 4rem;
+    color: var(--secondary-color);
+    font-family: 'Lora', serif;
+    font-weight: bold;
+    line-height: 4rem;
+  }
+
+  .heading-two{
+    font-size: 3.3rem;
+    font-family: 'Lora', serif;
+    font-weight: bold;
+    color: var(--secondary-color);
+  }
+
+  .heading-three{
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+  }
+
+  .heading-four{
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+  }
+
+  .paragraph{
+    font-size: 1.5rem;
+    font-family: 'Lato', sans-serif;
+    color: var(--secondary-color-fade);
+    line-height: 2.5rem;
+  }
+
+  .btn-one,
+  .btn-one-light{
+    font-size: 1.5rem;
+    border: 1px solid var(--primary-color);
+    padding: .7rem 1.2rem;
+    cursor: pointer;
+    transition: var(--default-transition);
+  }
+
+  .btn-one{
+    color: var(--white-color);
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 20px 0 rgba(0,0,0,.1);
+  }
+
+  .btn-one:hover,
+  .search-box form button:hover{
+    background-color: var(--white-color);
+    color: var(--primary-color);
+    box-shadow: none;
+  }
+
+  .btn-one-light{
+    position: absolute;
+    right: 2rem;
+    top: 1.2rem;
+    color: var(--primary-color);
+    background-color: var(--white-color);
+    box-shadow: none;
+  }
+
+  .btn-one-light:hover{
+    background-color:#8489f03f;
+    color: var(--primary-color);
+  }
+
+  .btn-menu{
+    display: none;
+  }
+
+  .btn-menu div{
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    position: absolute;
+    top: 1.2rem;
+    right: 2rem;
+    background-image: url(../images/svg/menu.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 40%;
+  }
+
+  .basic-card,
+  .static-basic-card{
+    background-color: var(--white-color);
+    padding: 2rem;
+    transition: var(--default-transition);
+    cursor: pointer;
+  }
+
+  .static-basic-card{
+    cursor: initial;
+  }
+
+  .static-basic-card__element img{
+    max-height: 2rem;
+  }
+  .static-basic-card__element span{
+    color: var(--yellow-color);
+    font-size: 1.4rem;
+  }
+
+
+  .basic-card a,
+  .static-basic-card a{
+    font-size: 1.5rem;
+    color: var(--primary-color);
+  }
+
+  .static-basic-card__btn a button{
+    font-size: 1.5rem;
+    border: 1px solid var(--ternary-color);
+    color: var(--secondary-color);
+    padding: .7rem 1.2rem;
+    cursor: pointer;
+    transition: var(--default-transition);
+    background-color: var(--ternary-color);
+    margin-bottom: 1rem;
+  }
+
+
+  .basic-card .card-link:hover{
+    text-decoration: underline;
+  }
+
+  .basic-card:hover{
+    transform: translateY(-1rem);
+  }
+
+  .basic-card__illustration{
+    height: 20rem;
+    background-color: var(--ternary-color);
+  }
+
+  .navigation-bar{
+    position: relative;
+    display: flex;
+    padding: 0 2rem;
+    background-color: var(--white-color);
+    border-bottom: 1px solid var(--ternary-color-gradient);
+  }
+
+  .navigation-bar .text-logo{
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    font-family: 'Dosis', sans-serif;
+    font-weight: 600;
+  }
+
+  .navigation-bar__logo{
+    padding-top: 1rem;
+    margin-right: 2rem;
+  }
+
+  .navigation-bar .navigation-bar__menu a li{
+    font-size: 1.6rem;
+    color: var(--secondary-color);
+    margin-left: 1rem;
+    font-weight: bold;
+    padding: 1rem;
+    transition: var(--default-transition);
+    text-transform: capitalize;
+  }
+  
+  .navigation-bar .navigation-bar__menu a:hover li{
+    background-color: var(--ternary-color);
+    color: var(--teal-color-gradient);
+  }
+
+  .header{
+    padding-top: 3rem;
+    min-height: 50rem;
+    background-color: var(--white-color);
+  }
+
+  .header__text-content,
+  .header__illustration{
+    height: 50rem;
+  }
+
+  .header__illustration img{
+    max-height: 30rem;
+  }
+
+  .header__user-photo{
+    height: 30rem;
+    width: 30rem;
+    border-radius: 50%;
+    border: 2px solid var(--ternary-color-gradient);
+  }
+
+  .second-header{
+    height: 40rem;
+    margin-top: 4rem;
+    background-color: var(--white-color);
+    box-shadow: 0 2px 20px 0 rgba(0,0,0,.1);
+    border-radius: 3px;
+  }
+
+  .search-box form input{
+    font-size: 1.5rem;
+    padding-left: 1rem;
+    height: 3.5rem;
+    border-radius: 2.5rem;
+    background-color: var(--ternary-color);
+    border: none;
+    color: var(--secondary-color);
+  }
+  
+  .search-box form textarea{
+    resize: none;
+    font-size: 1.5rem;
+    padding-left: 1rem;
+    border-radius: 1rem;
+    background-color: var(--ternary-color);
+    border: none;
+    color: var(--secondary-color);
+  }
+
+  .search-box form button{
+    cursor: pointer;
+    font-size: 1.5rem;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: .5rem 1rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 2.5rem;
+    transition: var(--default-transition);
+  }
+
+  .contact-us{
+    background-color: var(--white-color);
+    padding: 5rem 0;
+  }
+
+  .certification-details li{
+    display: block;
+    font-size: 1.5rem;
+    padding: .5rem 0;
+    color: var(--secondary-color-fade);
+  }
+
+  .certification-details li span{
+    color: var(--primary-color);
+  }
+
+  .logo-nan{
+    max-height: 27rem;
+  }
+
+  .feature__img{
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    background-color: var(--white-color);
+  }
+ 
+  .cl-primary{color: var(--primary-color);}
+  .cl-teal{color: var(--teal-color-gradient);}
+
+  /*-------------------------*/
+
+  @media screen and (max-width:991px){
+    .header__illustration img {
+      max-height: 20rem;
+    }
+
+    .header__user-photo{
+      height: 23rem;
+      width: 23rem;
+    }
+  }
+  
+  @media screen and (max-width:768px){
+    .header__text-content {
+      height: 40rem;
+    }
+
+    .header__illustration {
+      height: auto;
+      padding: 2rem 0;
+    }
+
+    .mw-p {
+      max-width: 48rem;
+    }
+
+    .navigation-bar .navigation-bar__menu a li{
+      display: block;
+    }
+
+    .navigation-bar{
+      display: block;
+    }
+
+    .btn-one-light {
+      position: absolute;
+      right: 7rem;  
+    }
+
+    .btn-menu{
+      display: inline;
+    }
+
+    .navigation-bar{
+      padding-bottom: 1.7rem;
+    }
+
+    .navigation-bar__menu{
+      display: none;
+    }
+  }
+
+  @media screen and (max-width:576px){
+    body{
+      padding: 1rem;
+    }
+
+  }
+

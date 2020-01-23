@@ -1,0 +1,22 @@
+section
+{
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-count: 4;
+}
+
+section h1
+{
+    break-before: column;
+    -webkit-column-break-before: always;
+}
+
+
+div
+{
+    background-image: linear-gradient(to top right, blue, green);
+
+    /* Obligatoire si on veut "voir" le dégradé */
+    width: 400px;
+    height: 300px;
+}
