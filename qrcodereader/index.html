@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+
+
+  <div class="container">
+    <h3>Examples</h3>
+    <hr>
+    <div id="app">
+      <qrcode value="https://fengyuanchen.github.io/vue-qrcode"></qrcode>
+      <qrcode value="https://fengyuanchen.github.io/vue-qrcode" :options="{ color: { dark: '#007bff' } }"></qrcode>
+      <qrcode value="https://fengyuanchen.github.io/vue-qrcode" :options="{ color: { dark: '#777fff' } }" tag="img"></qrcode>
+    </div>
+    <br>
+
+
+
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js" crossorigin="anonymous"></script>
+
+    <script src="js/qr.js"></script>
+    <script>
+        window.onload = function () {
+            Vue.component(VueQrcode.name, VueQrcode);
+
+            new Vue({
+                el: '#app',
+            });
+            };
+    </script>
+</body>
+</html>
