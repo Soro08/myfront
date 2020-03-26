@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+</head>
+<body>
+    
+<!-- Or if you want a more recent canary version -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script> -->
+<video id="video" controls></video>
+<script>
+  var video = document.getElementById('video');
+  if (Hls.isSupported()) {
+    var hls = new Hls();
+    hls.loadSource('https://strhls.streamakaci.tv/str_africasportstv_africasportstv/str_africasportstv_multi/str_africasportstv_africasportstv/str_africasportstv_player_480p/chunks.m3u8?nimblesessionid=67070079');
+    hls.attachMedia(video);
+    hls.on(Hls.Events.MANIFEST_PARSED, function() {
+      video.play();
+    });
+  }
+
+//    SPORT https://telc.mms-iptv.com/live/tv5/chunks.m3u8?nimblesessionid=108636&wmsAuthSign=c2VydmVyX3RpbWU9My8yNi8yMDIwIDI6MzI6MTAgQU0maGFzaF92YWx1ZT1pZTB3dzdzalRJS3IzYXlZKzVGQm1BPT0mdmFsaWRtaW51dGVzPTE1MA==
+//   TV5 AFRIC https://telc.mms-iptv.com/live/tv5/chunks.m3u8?nimblesessionid=108636&wmsAuthSign=c2VydmVyX3RpbWU9My8yNi8yMDIwIDI6MzI6MTAgQU0maGFzaF92YWx1ZT1pZTB3dzdzalRJS3IzYXlZKzVGQm1BPT0mdmFsaWRtaW51dGVzPTE1MA==
+// VOX AFRICA   https://fuji.mms-iptv.com/live/crtvs/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9My8yNi8yMDIwIDI6MjM6NDUgQU0maGFzaF92YWx1ZT00S3NqZlA1bUMvRHhGdG5PYTlIZTR3PT0mdmFsaWRtaW51dGVzPTE1MA==
+  // hls.js is not supported on platforms that do not have Media Source Extensions (MSE) enabled.
+  // When the browser has built-in HLS support (check using `canPlayType`), we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video element through the `src` property.
+  // This is using the built-in support of the plain video element, without using hls.js.
+  // Note: it would be more normal to wait on the 'canplay' event below however on Safari (where you are most likely to find built-in HLS support) the video.src URL must be on the user-driven
+  // white-list before a 'canplay' event will be emitted; the last video event that can be reliably listened-for when the URL is not on the white-list is 'loadedmetadata'.
+  else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+    video.src = 'https://fuji.mms-iptv.com/live/crtvs/playlist.m3u8?wmsAuthSign=c2VydmVyX3RpbWU9My8yNi8yMDIwIDI6MjM6NDUgQU0maGFzaF92YWx1ZT00S3NqZlA1bUMvRHhGdG5PYTlIZTR3PT0mdmFsaWRtaW51dGVzPTE1MA==';
+    video.addEventListener('loadedmetadata', function() {
+      video.play();
+    });
+  }
+</script>
+</body>
+</html>
