@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- https://cdn.plrjs.com/player/tyre8f87k8kee/szyh0lte5utp.js -->
+    <!-- https://cdn.plrjs.com/player/tyre8f87k8kee/18nz62qjveu1.js -->
+    <!-- VIDEO -->
+    <!-- <script src="static/playerjs.js"></script> -->
+    <script src="https://cdn.plrjs.com/player/tyre8f87k8kee/18nz62qjveu1.js"></script> 
+    <!-- RADIO -->
+    <script src="static/dash.js"></script>
+    <script src="static/hls.js"></script>
+</head>
+<body>
+    
+    <!-- radio 400px 100px -->
+    <div id="player" style="width: 30%; height: 400px;"></div>
+
+    <script>
+        var player = new Playerjs(
+            {
+                id:"player", 
+                // file:"https://plrjs.com/x.mp4",
+                // file:"https://www.enovativecdn.com:4433/rticdn/smil:rti1.smil/playlist.m3u8",
+                file:"https://www.enovativecdn.com:4433/radio/radiorci.stream/playlist.m3u8",
+                title:"NaN"
+            }
+        );
+    </script>
+</body>
+</html>
